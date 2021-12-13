@@ -1,0 +1,272 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.container {
+	font-size: 1.6vh;
+	font-family: Algerian;
+	border: 0.5px solid;
+	position: fixed;
+	top: 11px;
+	left: 0;
+	width: 90%;
+	padding: 0.5px 100px;
+	z-index: 10000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 47px;
+    background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
+    animation: animate 5.5s linear forwards;
+}
+
+.container.sticky {
+	background: #D3D3D3;
+	padding: 100px 200px;
+	box-shadow: 0 10px 19 rgba(0,0,0,0.05);
+}
+
+.container {
+	width:90%;
+	margin:-11px auto;
+	color: #FFFFFF;
+}
+.container a:hover {
+	background-color: #424242;
+	color:#fff;
+	padding: 13px 20px;
+	box-shadow: 0 10px 19;
+}
+
+.container img {
+	font-size: 2px;
+	background-size: 272px;
+	height: 50px;
+}
+.banner {
+	height: 100vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.FSHATRAT-area,
+.HISTORIA-area,
+.KULTURA-area,
+.KONTAKTONI-area{
+	height: 110vh;
+}
+
+.text-content h3{
+	font-size: 30px;
+	letter-spacing: 6px;
+	margin-bottom: 1px;
+	animation: text 3s 1;
+	color: #000000;
+	padding: 10px 39px;
+	width: 96%;
+	background-color: #FFFFFF;
+	text-align: center;
+	font-family: Algerian;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.text-content h2{
+	font-size: 30px;
+	letter-spacing: 6px;
+	margin-bottom: 1px;
+	animation: text 3s 1;
+	color: #FFFFFF;
+	padding: 10px 39px;
+	width: 96%;
+	left: 110%;
+	border: 0.3px solid #000000;
+	background-color: #FFFFFF;
+	text-align: center;
+	font-family: Algerian;
+    font-weight: bold;
+    font-style: italic;
+    background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
+    animation: animate 5.5s linear forwards;
+}
+
+.container.sticky .img{
+	color: #111;
+}
+
+.container:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+header h1 {
+	float: left;
+	padding:14px 0;
+	color: #123BE3;
+}
+header ul {
+	font-family: Chaparral Pro Light;
+	float: left;
+}
+header ul li {
+	display: inline-block;
+}
+header ul li a {
+	padding:25px 20px;
+	display: inline-block;
+}
+header ul li a:hover{
+	background-color:#000000;
+	color:#fff;
+}
+.active {
+	background-color: #000000;
+	color: #fff;
+}
+
+.banner {
+	font-family: Adobe Heiti Std R;
+	height: 78vh;
+	border: 0.5px solid;
+	background-image: url('../img/vv.png');
+	background-size: cover;
+	width: 100%;
+	height: 930px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.banner:after {
+	content:'';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(159, 169, 160 .6);
+}
+
+.banner .content {
+	max-width: 900px;
+}
+
+.banner .content h2 {
+	font-size: 2.5em;
+	color: #fff;
+	font-family: Agency FB;
+
+}
+
+.banner h2 {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Adobe Garamond Pro Bold;
+	color: #000000;
+	z-index: 1;
+	padding: 20px 22px;
+}
+
+.container-img {
+	max-width: 1200px;
+	margin: auto;
+	background: #f2f2f2;
+	overflow: auto;
+}
+.container-img h3{
+	font-family: Agency FB;
+	padding: 30px 33px;
+	border: 2px solid #fff;
+}
+
+.gallery{
+	margin: 27px;
+	border: 2px solid #ccc;
+	float: left;
+	width: 330px;
+}
+
+.gallery img{
+	width: 110%;
+	height: 250px;
+}
+.video-player h3{
+	font-family: Agency FB;
+	padding: 5px 3px;
+	border: 2px solid #fff;
+}
+.video-player{
+	border: 1px solid #000000;
+	padding: 3px 3px;
+}
+
+<!--Te-->
+
+section {
+	padding: 50px 0;
+} 
+
+section h3 {
+	text-align: center;
+	padding: 20px 0;
+	color: #4A843C;
+	margin-bottom: 10px;
+}
+
+#container-sidebar {
+	position: fixed;
+	width: 20px;
+	height: 10%;
+	background: #000000;
+	column-width: 100px;
+	box-shadow: 1px solid #000000;
+
+}
+
+.container-sidebar header{
+	font-family: Agency FB;
+	font-size: 21.5px;
+	color: #FFFFFF;
+	width: 15%;
+	height: 10%;
+	text-align: center;
+	line-height: 27px;
+	background: #000000;
+	padding: 10px 20px;
+}
+.container-sidebar ul {
+	list-style: none;
+	width: 10%;
+	background-color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.container-sidebar li a{
+	text-decoration: none;
+	color: black;
+	font-family: Bahnschrift Condensed;
+	font-size: 21.5px;
+	display: block;
+	padding: 0px 29px;
+}
+
+.container-sidebar ul li a:hover{
+	background-color: #8B8B8B;
+
+}
+.imgBx {
+	margin: 10px;
+	padding: 40px 300px;
+	width: 52%;
+	height: 330px;
+}
