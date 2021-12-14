@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #ACACAC;
+}
+
+.container h1{
+	position: absolute;
+	font-family: Algerian;
+	position: fixed;
+	top: 17px;
+	left: 40%;
+	height: 30%; 
+}
+.video-player{
+	width: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
