@@ -313,3 +313,31 @@ section h3 {
 	height: 230px; 
 	margin-top: -88px;
 }
+
+.kultura p{
+	top: 30px;
+	font-family: Bahnschrift Condensed;
+	font-size: 2.3vh;
+	border:30px solid #fff;
+}
+.kultura-img {
+	float: left;
+	margin: 10px;
+	float: left;
+	width: 349px;
+	height: 85%;
+	padding: 40px 40px;
+}
+.kultura-img img {
+	width: 100%;
+	height: 300px;
+}
+
+desc {
+	font-size: 15px;
+	font-family: Adobe Heiti Std R;
+	padding: 15px;
+	text-align: center;
+}
+
+/*Edhe Kultura mbaroi*/
