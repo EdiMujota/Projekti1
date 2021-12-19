@@ -247,7 +247,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		<h2><b>Dërgo mesazh</b></h2>
 		<div class="inputBox">
 			Emri <input type="text" id="name">
-			<label id="nameMsg" for="name"></label> <br>  		
+			<label style="color: red;" id="incorrectName" for="name"></label> <br>  		
 		</div>
 
 		<div class="inputBox">
@@ -257,7 +257,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 
 		<div class="inputBox">
 			Email <input type="text" id="email">
-			<label id="emailMsg" for="email"></label> <br>
+			<label style="color: red;" id="incorrectEmail" for="email"></label> <br>
 		</div>
 
 		<div class="inputBox">
@@ -266,12 +266,61 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		</div>
 
 		<div class="inputBox">
-			<input type="Submit" name="" value="Dërgo">
+			<input type="Submit" id="signupButton" value="Dërgo">
 		</div>
 		</form>
 	</div>
 	<p class="signup-box1">Nuk keni një llogari? <a href="signup.html"><b>Regjistrohu Këtu</b></a></p>
 	</section>
+
+	<script>
+       
+        let signupButton = document.getElementById("signupButton");
+        let incorrectName = document.getElementById("incorrectName");
+		let incorrectEmail = document.getElementById("incorrectEmail");
+
+        var nameRegex = /^[A-Z][a-z]{2,9}/;
+        var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
+       
+       signupButton.addEventListener("click", function(event){
+           let name = document.getElementById("name").value;
+
+           if(name == ""){
+            nameMsg.innerText="Please fill the name field!";
+               event.preventDefault();
+
+           }else{
+           if(nameRegex.test(name) == true){
+
+           }else{
+            incorrectName.innerText="Incorrect Name";
+            event.preventDefault();
+           }
+
+           }
+
+		   /*----------------------------------------------------------*/
+
+		   signupButton.addEventListener("click", function(event){
+           let email = document.getElementById("email").value;
+
+           if(email == ""){
+            incorrectEmail.innerText="Please fill the name field!";
+               event.preventDefault();
+
+           }else{
+           if(emailRegex.test(email) == true){
+
+           }else{
+            incorrectEmail.innerText="Incorrect Email";
+            event.preventDefault();
+           }
+
+           }
+
+       })
+
+    </script>
 
   <div id="About" class="About-area">
 	<div class="centerdiv">
