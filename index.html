@@ -29,7 +29,8 @@
 	    			    <h3>NJIHUNI ME KOMUNËN E SHTIMËS DHE FSHATRAT E SAJ</h3>	    				
 	    			</div>
 	    		</div>
-	    		</section>
+			</div>
+		</div>
 
 <!--Ketu e kemi fshire nje JS-SCRIPT-->			
 	
@@ -210,8 +211,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 </div>	
 		   
 </div>
-</div>	
-<hr>
+</div>
 
 <!--Kontaktoni-->
 
@@ -223,7 +223,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 			<div class="container-contact">
 				<div class="contactInfo">
 					<div class="box">
-						<div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+						<div class="icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
 						<div class="text">
 							<h3>Telefoni</h3>
 							<p>****+383 43 726 083****</p>
@@ -232,7 +232,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 					</div>
 
 					<div class="box">
-						<div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+						<div class="icon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></div>
 
 						<div class="text">
 							<h3>Email</h3>
@@ -280,7 +280,6 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		let incorrectEmail = document.getElementById("incorrectEmail");
 
         var nameRegex = /^[A-Z][a-z]{2,9}/;
-        var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
        
        signupButton.addEventListener("click", function(event){
            let name = document.getElementById("name").value;
@@ -301,6 +300,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 
 		   /*----------------------------------------------------------*/
 
+		   var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
 		   signupButton.addEventListener("click", function(event){
            let email = document.getElementById("email").value;
 
@@ -336,6 +336,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 	<a href="https://www.google.com/gmail/">
 		<i class="fas fa-envelope"></i>
 	</a>
+	</div>
 </div>
  
 </body>
