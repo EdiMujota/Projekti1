@@ -9,21 +9,89 @@
     <h1>Regjistrohu</h1>
     <h4>Regjistrimi është falas dhe zgjat vetëm një minutë</h4>
     <form>
-        <label>Emri</label>
-        <input type="text" placeholder="">
-        <label>Mbiemri</label>
-        <input type="text" placeholder="">
-        <label>Email</label>
-        <input type="email" placeholder="">
+        <label style="color: red;" id="incorrectName" for="name"></label>
+        Emri <input type="text" placeholder="" id="name">
+        <label style="color: red;" id="incorrectSurname" for="surname"></label>
+        Mbiemri <input type="text" placeholder="" id="surname">
+        <label style="color: red;" id="incorrectEmail" for="email"></label>
+        Email <input type="email" placeholder="" id="email">
         <label>Fjalëkalimi</label>
         <input type="password" placeholder="">
         <label>Konfirmo Fjalëkalimin</label>
         <input type="confirm password" placeholder="">
-        <input type="button" value="Regjistrohu">
+        
+        <input type="submit" id="signupButton" value="Regjistrohu">
     </form>
     <p>Duke klikuar butonin Regjistrohu, ju pajtoheni me ne!<br>
     <a href="#">Termat dhe Kushtet</a> - <a href="#">Politika dhe Privatësia</a>
     </p>
     </div>
+
+    <script>
+       
+        let signupButton = document.getElementById("signupButton");
+        let incorrectName = document.getElementById("incorrectName");
+		let incorrectSurname = document.getElementById("incorrectSurname");
+		let incorrectEmail = document.getElementById("incorrectEmail");
+
+		/*---Emri---*/
+
+        var nameRegex = /^[A-Z][a-z]{2,9}/;
+       	signupButton.addEventListener("click", function(event){
+           	let name = document.getElementById("name").value;
+
+           	if(name == ""){
+            nameMsg.innerText="Please fill the name field!";
+            	event.preventDefault();
+
+           	}else{
+           	if(nameRegex.test(name) == true){
+
+           	}else{
+           	incorrectName.innerText="Incorrect Name";
+            event.preventDefault();
+           	}
+        }
+
+        /*---Mbiemri---*/
+
+		var surnameRegex = /^[A-Z][a-z]{2,9}/;
+       	signupButton.addEventListener("click", function(event){
+           	let surname = document.getElementById("surname").value;
+
+           	if(surname == ""){
+            surnameMsg.innerText="Please fill the name field!";
+            	event.preventDefault();
+
+           	}else{
+           	if(surnameRegex.test(surname) == true){
+
+           	}else{
+            incorrectSurname.innerText="Incorrect Surname";
+            event.preventDefault();
+           	}
+        }
+
+        /*---Email---*/
+
+		var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
+		signupButton.addEventListener("click", function(event){
+        	let email = document.getElementById("email").value;
+
+           	if(email == ""){
+            incorrectEmail.innerText="Please fill the name field!";
+               event.preventDefault();
+
+           	}else{
+           	if(emailRegex.test(email) == true){
+
+           	}else{
+            incorrectEmail.innerText="Incorrect Email";
+            event.preventDefault();
+           	}
+			}
+		})
+    
+    </script>
 </body>
 </html>

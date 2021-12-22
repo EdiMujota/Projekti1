@@ -252,7 +252,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 
 		<div class="inputBox">
 			Mbiemri <input type="text" id="surname">
-			<label id="surnameMsg" for="surname"></label> <br>   		
+			<label style="color: red;" id="incorrectSurname" for="surname"></label> <br>   		
 		</div>
 
 		<div class="inputBox">
@@ -277,48 +277,66 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
        
         let signupButton = document.getElementById("signupButton");
         let incorrectName = document.getElementById("incorrectName");
+		let incorrectSurname = document.getElementById("incorrectSurname");
 		let incorrectEmail = document.getElementById("incorrectEmail");
 
+		/*---Emri---*/
+
         var nameRegex = /^[A-Z][a-z]{2,9}/;
-       
-       signupButton.addEventListener("click", function(event){
-           let name = document.getElementById("name").value;
+       	signupButton.addEventListener("click", function(event){
+           	let name = document.getElementById("name").value;
 
-           if(name == ""){
+           	if(name == ""){
             nameMsg.innerText="Please fill the name field!";
-               event.preventDefault();
+            	event.preventDefault();
 
-           }else{
-           if(nameRegex.test(name) == true){
+           	}else{
+           	if(nameRegex.test(name) == true){
 
-           }else{
-            incorrectName.innerText="Incorrect Name";
+           	}else{
+           	incorrectName.innerText="Incorrect Name";
             event.preventDefault();
-           }
+           	}
+        }
 
-           }
+		/*---Mbiemri---*/
 
-		   /*----------------------------------------------------------*/
+		var surnameRegex = /^[A-Z][a-z]{2,9}/;
+       	signupButton.addEventListener("click", function(event){
+           	let surname = document.getElementById("surname").value;
 
-		   var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
-		   signupButton.addEventListener("click", function(event){
-           let email = document.getElementById("email").value;
+           	if(surname == ""){
+            surnameMsg.innerText="Please fill the name field!";
+            	event.preventDefault();
 
-           if(email == ""){
+           	}else{
+           	if(surnameRegex.test(surname) == true){
+
+           	}else{
+            incorrectSurname.innerText="Incorrect Surname";
+            event.preventDefault();
+           	}
+        }
+
+		/*---Email---*/
+
+		var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
+		signupButton.addEventListener("click", function(event){
+        	let email = document.getElementById("email").value;
+
+           	if(email == ""){
             incorrectEmail.innerText="Please fill the name field!";
                event.preventDefault();
 
-           }else{
-           if(emailRegex.test(email) == true){
+           	}else{
+           	if(emailRegex.test(email) == true){
 
-           }else{
+           	}else{
             incorrectEmail.innerText="Incorrect Email";
             event.preventDefault();
-           }
-
-           }
-
-       })
+           	}
+			}
+		})
 
     </script>
 

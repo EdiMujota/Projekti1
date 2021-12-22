@@ -40,7 +40,7 @@ form input{
     outline: none;
 }
 
-input[type="button"]{
+input[type="submit"]{
     width: 360px;
     height: 35px;
     margin-top: 20px;
