@@ -91,6 +91,33 @@
            	}
 			}
 		})
+
+        /*---Password---*/
+
+        let Password = document.getElementById('Password');
+        let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
+        signupButton.addEventListener('click', function(event){
+
+            let password = document.getElementById('password').value;
+
+            if(password == ''){
+                Password.innerText = 'Fill the Confrim field!';
+                event.preventDefault();
+            }else{
+                if(password.length < 8){
+                    Password.innerText = 'Longer than 8 characters';
+                    event.preventDefault();
+                }else{
+                    if(passwordRegex.test(password) == true){
+
+                    }else{
+                        Password.innerText = 'Type a stronger Passwrod!';
+                        event.preventDefault();
+                    }
+                }
+            }
+        })
     
     </script>
 </body>
