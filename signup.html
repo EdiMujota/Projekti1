@@ -9,16 +9,17 @@
     <h1>Regjistrohu</h1>
     <h4>Regjistrimi është falas dhe zgjat vetëm një minutë</h4>
     <form>
-        <label style="color: red;" id="incorrectName" for="name"></label>
-        Emri <input type="text" placeholder="" id="name">
-        <label style="color: red;" id="incorrectSurname" for="surname"></label>
-        Mbiemri <input type="text" placeholder="" id="surname">
-        <label style="color: red;" id="incorrectEmail" for="email"></label>
-        Email <input type="email" placeholder="" id="email">
-        <label>Fjalëkalimi</label>
-        <input type="password" placeholder="">
-        <label>Konfirmo Fjalëkalimin</label>
-        <input type="confirm password" placeholder="">
+        <label style="color: red;" id="nameMsg"></label>
+        Emri <input type="text" placeholder="" name="name" id="name">
+        <label style="color: red;" id="surnameMsg"></label>
+        Mbiemri <input type="text" placeholder="" name="surname" id="surname">
+        <label style="color: red;" id="emailMsg"></label>
+        Email <input type="text" placeholder="" name="email" id="email">
+
+        <label style="color: red;" id="passwordMsg"></label>
+        Fjalëkalimi <input type="password" placeholder="" name="password" id="password">
+        <label style="color: red;" id="confirmpasswordMsg"></label>
+        Konfirmo Fjalëkalimin <input type="confirm password" placeholder="" name="confirmpassword">
         
         <input type="submit" id="signupButton" value="Regjistrohu">
     </form>
@@ -28,93 +29,105 @@
     </div>
 
     <script>
-       
-        let signupButton = document.getElementById("signupButton");
-        let incorrectName = document.getElementById("incorrectName");
-		let incorrectSurname = document.getElementById("incorrectSurname");
-		let incorrectEmail = document.getElementById("incorrectEmail");
+
+        var button = document.getElementById("signupButton");
+    	var nameMsg = document.getElementById("nameMsg");
+    	var surnameMsg = document.getElementById("surnameMsg");
+    	var emailMsg = document.getElementById("emailMsg");
+        var passwordMsg = document.getElementById("passwordMsg");
+
+        /*Regex*/
+    	var nameRegex = /^[A-Z][a-z]{2,9}/;
+		var surnameRegex = /^[A-Z][a-z]{2,9}/;
+		var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 		/*---Emri---*/
+        button.addEventListener("click", function(event){
+           var name = document.getElementById("name").value;
 
-        var nameRegex = /^[A-Z][a-z]{2,9}/;
-       	signupButton.addEventListener("click", function(event){
-           	let name = document.getElementById("name").value;
-
-           	if(name == ""){
-            nameMsg.innerText="Please fill the name field!";
-            	event.preventDefault();
-
-           	}else{
-           	if(nameRegex.test(name) == true){
-
-           	}else{
-           	incorrectName.innerText="Incorrect Name";
-            event.preventDefault();
-           	}
-        }
+           if(name == "" || name == null){
+                nameMsg.innerText="Fill Name field!";
+                event.preventDefault();
+            }else{
+                if(nameRegex.test(name)){
+                    nameMsg.innerText="";
+                }else{
+                    nameMsg.innerText="Name Error!";
+                    event.preventDefault();
+                }
+            }
+        })
 
         /*---Mbiemri---*/
+        button.addEventListener("click", function(event){
+           var surname = document.getElementById("surname").value;
 
-		var surnameRegex = /^[A-Z][a-z]{2,9}/;
-       	signupButton.addEventListener("click", function(event){
-           	let surname = document.getElementById("surname").value;
-
-           	if(surname == ""){
-            surnameMsg.innerText="Please fill the name field!";
-            	event.preventDefault();
-
-           	}else{
-           	if(surnameRegex.test(surname) == true){
-
-           	}else{
-            incorrectSurname.innerText="Incorrect Surname";
-            event.preventDefault();
-           	}
-        }
+           if(surname == "" || surname == null){
+                surnameMsg.innerText="Fill Username field!";
+                event.preventDefault();
+            }else{
+                if(surnameRegex.test(surname)){
+                    surnameMsg.innerText="";
+                }else{
+                    surnameMsg.innerText="Username Error!";
+                    event.preventDefault();
+				}
+            }
+        })
 
         /*---Email---*/
+        button.addEventListener("click", function(event){
+           var email = document.getElementById("email").value;
 
-		var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
-		signupButton.addEventListener("click", function(event){
-        	let email = document.getElementById("email").value;
-
-           	if(email == ""){
-            incorrectEmail.innerText="Please fill the name field!";
-               event.preventDefault();
-
-           	}else{
-           	if(emailRegex.test(email) == true){
-
-           	}else{
-            incorrectEmail.innerText="Incorrect Email";
-            event.preventDefault();
-           	}
-			}
+           if(email == "" || email == null){
+                emailMsg.innerText="Fill Email field!";
+                event.preventDefault();
+            }else{
+                if(emailRegex.test(email)){
+                    emailMsg.innerText="";
+                }else{
+                    emailMsg.innerText="Email Error!";
+                    event.preventDefault();
+				}
+            }
 		})
 
         /*---Password---*/
+        button.addEventListener('click', function(event){
+            var password = document.getElementById("password").value;
 
-        let Password = document.getElementById('Password');
-        let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-
-        signupButton.addEventListener('click', function(event){
-
-            let password = document.getElementById('password').value;
-
-            if(password == ''){
-                Password.innerText = 'Fill the Confrim field!';
+            if(password == ""){
+                passwordMsg.innerText = "Fill the Confrim field!";
                 event.preventDefault();
             }else{
                 if(password.length < 8){
-                    Password.innerText = 'Longer than 8 characters';
+                    passwordMsg.innerText = "Longer than 8 characters";
                     event.preventDefault();
                 }else{
                     if(passwordRegex.test(password) == true){
 
                     }else{
-                        Password.innerText = 'Type a stronger Passwrod!';
+                        passwordMsg.innerText = "Type a stronger Passwrod!";
                         event.preventDefault();
                     }
+                }
+            }
+        })
+
+        /*---Confirm Password---*/
+        button.addEventListener('click', function(event){
+            var confirmpassword = document.getElementById("password").value;
+
+            if(confirmpassword == ""){
+                confirmpasswordMsg.innerText = "Fill the Confrim field!";
+                event.preventDefault();
+            }else{
+                if(confirmpassword != password){
+                    passwordMsg.innerText = "Passwords does not match";
+                    event.preventDefault();
+                }else{
+                    
                 }
             }
         })

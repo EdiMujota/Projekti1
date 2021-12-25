@@ -243,21 +243,22 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 			</div>
 
 	<div class="contactForm">
-		<form>
+		<form action="">
 		<h2><b>Dërgo mesazh</b></h2>
+
 		<div class="inputBox">
-			Emri <input type="text" id="name">
-			<label style="color: red;" id="incorrectName" for="name"></label> <br>  		
+			<input type="text" name="name" id="name" placeholder="Emri">
+			<label style="color: red;" id="nameMsg"></label> <br>
 		</div>
 
 		<div class="inputBox">
-			Mbiemri <input type="text" id="surname">
-			<label style="color: red;" id="incorrectSurname" for="surname"></label> <br>   		
+			<input type="text" name="surname" id="surname" placeholder="Mbiemri">
+			<label style="color: red;" id="surnameMsg"></label> <br>   		
 		</div>
 
 		<div class="inputBox">
-			Email <input type="text" id="email">
-			<label style="color: red;" id="incorrectEmail" for="email"></label> <br>
+			<input type="text" name="email" id="email" placeholder="Email">
+			<label style="color: red;" id="emailMsg"></label> <br>
 		</div>
 
 		<div class="inputBox">
@@ -266,7 +267,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		</div>
 
 		<div class="inputBox">
-			<input type="Submit" id="signupButton" value="Dërgo">
+			<input type="Submit" id="loginBtn" value="Dërgo">
 		</div>
 		</form>
 	</div>
@@ -274,73 +275,71 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 	</section>
 
 	<script>
-       
-        let signupButton = document.getElementById("signupButton");
-        let incorrectName = document.getElementById("incorrectName");
-		let incorrectSurname = document.getElementById("incorrectSurname");
-		let incorrectEmail = document.getElementById("incorrectEmail");
+
+		var button = document.getElementById("loginBtn");
+    	var nameMsg = document.getElementById("nameMsg");
+    	var surnameMsg = document.getElementById("surnameMsg");
+    	var emailMsg = document.getElementById("emailMsg");
+
+		/*Regex*/
+    	var nameRegex = /^[A-Z]\w+[._-]?\w+/;
+		var surnameRegex = /^[A-Z][a-z]{2,9}/;
+		var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
 
 		/*---Emri---*/
+       	button.addEventListener("click", function(event){
+           var name = document.getElementById("name").value;
 
-        var nameRegex = /^[A-Z][a-z]{2,9}/;
-       	signupButton.addEventListener("click", function(event){
-           	let name = document.getElementById("name").value;
+           if(name == "" || name == null){
+                nameMsg.innerText="Fill Name field!";
+                event.preventDefault();
+            }else{
+                if(nameRegex.test(name)){
+                    nameMsg.innerText="";
+                }else{
+                    nameMsg.innerText="Name Error!";
+                    event.preventDefault();
+                }
+            }
+        })
 
-           	if(name == ""){
-            nameMsg.innerText="Please fill the name field!";
-            	event.preventDefault();
+    	/*---Mbiemri---*/
+		button.addEventListener("click", function(event){
+           var surname = document.getElementById("surname").value;
 
-           	}else{
-           	if(nameRegex.test(name) == true){
+           if(surname == "" || surname == null){
+                surnameMsg.innerText="Fill Username field!";
+                event.preventDefault();
+            }else{
+                if(surnameRegex.test(surname)){
+                    surnameMsg.innerText="";
+                }else{
+                    surnameMsg.innerText="Username Error!";
+                    event.preventDefault();
+				}
+            }
+        })
 
-           	}else{
-           	incorrectName.innerText="Incorrect Name";
-            event.preventDefault();
-           	}
-        }
+    	/*---Email---*/
+		button.addEventListener("click", function(event){
+           var email = document.getElementById("email").value;
 
-		/*---Mbiemri---*/
-
-		var surnameRegex = /^[A-Z][a-z]{2,9}/;
-       	signupButton.addEventListener("click", function(event){
-           	let surname = document.getElementById("surname").value;
-
-           	if(surname == ""){
-            surnameMsg.innerText="Please fill the name field!";
-            	event.preventDefault();
-
-           	}else{
-           	if(surnameRegex.test(surname) == true){
-
-           	}else{
-            incorrectSurname.innerText="Incorrect Surname";
-            event.preventDefault();
-           	}
-        }
-
-		/*---Email---*/
-
-		var emailRegex = /^[A-Za-z]+[._-]?\w+[+]?[A-Za-z]+@[A-Za-z]+[-]?[A-Za-z]+\.[A-Za-z]{2,3}/;
-		signupButton.addEventListener("click", function(event){
-        	let email = document.getElementById("email").value;
-
-           	if(email == ""){
-            incorrectEmail.innerText="Please fill the name field!";
-               event.preventDefault();
-
-           	}else{
-           	if(emailRegex.test(email) == true){
-
-           	}else{
-            incorrectEmail.innerText="Incorrect Email";
-            event.preventDefault();
-           	}
-			}
+           if(email == "" || email == null){
+                emailMsg.innerText="Fill Email field!";
+                event.preventDefault();
+            }else{
+                if(emailRegex.test(email)){
+                    emailMsg.innerText="";
+                }else{
+                    emailMsg.innerText="Email Error!";
+                    event.preventDefault();
+				}
+            }
 		})
 
-    </script>
+	</script>
 
-  <div id="About" class="About-area">
+	<div id="About" class="About-area">
 	<div class="centerdiv">
 
 	<a href="https://www.facebook.com/">
@@ -355,7 +354,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		<i class="fas fa-envelope"></i>
 	</a>
 	</div>
-</div>
+	</div>
  
 </body>
 </html>
