@@ -119,7 +119,7 @@
 		<li><a href="godanc.html">GODANC</a></li>
 		<li><a href="gjurkoc.html">GJURKOC</a></li>
 		<li><a href="karaçic.html">KARAÇICË DHE DUGË</a></li>
-		<li><a href="mollopolc.html">MOLLOPOLC</a></li>
+		<li><a href="mollopolc.html">MOLLOPOLCË</a></li>
 		<li><a href="muzeqin.html">MUZËQINË</a></li>
 		<li><a href="petrov.html">PETROVË</a></li>
 		<li><a href="pjetershtic.html">PJETËRSHTIC</a></li>
@@ -130,23 +130,60 @@
 		<li><a href="zborc.html">ZBORC</a></li>
 	</ul>
 	</div>
-	
-	<div class="slider-frame">
-		<div class="slide-images">
-			<div class="img-container01">
-				<img src="img/112.jpg">
-			</div>
-			<div class="img-container01">
-				<img src="img/113.jpeg">
-			</div>
-			<div class="img-container01">
-				<img src="img/117.jpg">
-			</div>
-			<div class="img-container01">
-				<img src="img/200.jpg">
-			</div>
+
+	<div class="slidercontainer">  
+		<div class="showSlide fade">  
+			<img src="img/111.jpg" />    
+		</div>  
+		<div class="showSlide fade">  
+			<img src="img/112.jpg" />                          
+		</div>  
+		<div class="showSlide fade">  
+			<img src="img/117.jpg" />                          
+		</div>  
+		<div class="showSlide fade">  
+			<img src="img/001.jpg" />                           
 		</div>
+		<div class="showSlide fade">  
+			<img src="img/113.jpeg" />                           
+		</div>
+		<div class="showSlide fade">  
+			<img src="img/115.jpg" />                           
+		</div>
+		<div class="showSlide fade">  
+			<img src="img/119.jpg" />
+		</div>
+		<div class="showSlide fade">  
+			<img src="img/116.jpeg" />                           
+		</div>
+		<div class="showSlide fade">  
+			<img src="img/200.jpg" />                           
+		</div>
+		
+		<a class="left" onclick="nextSlide(-1)">❮</a>  
+		<a class="right" onclick="nextSlide(1)">❯</a>  
 	</div>
+
+	<script>  
+		var slide_index = 1;  
+		displaySlides(slide_index);  
+		function nextSlide(n) {  
+			displaySlides(slide_index += n);  
+		}  
+		function currentSlide(n) {  
+			displaySlides(slide_index = n);  
+		}  
+		function displaySlides(n) {  
+			var i;  
+			var slides = document.getElementsByClassName("showSlide");  
+			if (n > slides.length) { slide_index = 1 }  
+			if (n < 1) { slide_index = slides.length }  
+			for (i = 0; i < slides.length; i++) {  
+				slides[i].style.display = "none";  
+			}  
+			slides[slide_index - 1].style.display = "block";  
+		}  
+	</script>
 
 	</div>
 </section>
