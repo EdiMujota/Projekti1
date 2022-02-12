@@ -365,7 +365,9 @@ desc {
 .contact .contactForm {
 	top: 40px;
 	float: left;
+	margin: auto;
 }
+
 .contact .content {
 	max-width: 800px;
 	text-align: center;
@@ -376,7 +378,7 @@ desc {
 	font-family: Algerian;
 	color: #FFFFFF;
 	margin-bottom: 13px;
-	font-size: 2.1em;
+	font-size: 1.3em;
 	font-weight: 500;
 	cursor: #fff; 
     font-weight: bold;
@@ -392,7 +394,8 @@ desc {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 39px;
+	margin-top: -31px;
+	margin-left: 739px;
 }
 
 .container-contact .contactInfo {
@@ -416,6 +419,7 @@ desc {
 	align-items: center;
 	border-radius: 30px;
 	font-size: 20px;
+	background-color: lightblue;
 }
 
 .container-contact .contactInfo .box .text {
@@ -440,16 +444,19 @@ desc {
 	padding: 30px 40px;
 	background: #fff;
 	margin-top: -110px;
+	border-radius: 8px;
 }
+
 .contactForm h2 {
 	text-align: center;
 	font-size: 19px;
 	color: #333;
 	font-weight: 500;
 }
+
 .contactForm .inputBox {
 	position: relative;
-	margin-top: 24px;
+	margin-top: 50px;
 	width: 100%;
 }
 
@@ -495,7 +502,10 @@ desc {
 	font-size: 18px;
 	transition: 0.5s;
 	margin-left: 4vh;
+	border-radius: 11px;
 }
+.contactForm .inputBox input[type="Submit"]:hover, .contactForm .inputBox input[type="Submit"]:active {background: green;}
+
 .paragraph {
 	font-family: Adobe Devanagari;
 	font-size: 18px;
@@ -530,13 +540,13 @@ desc {
 
 .signup-box1{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 6px;
     font-size: 15px;
     color: black;
-	background-color: white;
+	background-color: lightblue;
 	border: 1px;
 	border-radius: 6px;
-	margin-top: 6px;
+	margin-top: 60px;
 }
 
 /*Slider*/

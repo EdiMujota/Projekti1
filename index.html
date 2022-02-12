@@ -276,7 +276,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 			<div class="container-contact">
 				<div class="contactInfo">
 					<div class="box">
-						<div class="icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+						<div class="icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
 						<div class="text">
 							<h3>Telefoni</h3>
 							<p>****+383 43 726 083****</p>
@@ -297,9 +297,9 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 
 	<div class="contactForm">
 		<form action="">
-		<h2><b>Dërgo mesazh</b></h2>
+		<h2><b>Dërgo Mesazh</b></h2>
 
-		<div class="inputBox">
+		<!--<div class="inputBox">
 			<input type="text" name="name" id="name" placeholder="Emri">
 			<label style="color: red;" id="nameMsg"></label> <br>
 		</div>
@@ -312,7 +312,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		<div class="inputBox">
 			<input type="text" name="email" id="email" placeholder="Email">
 			<label style="color: red;" id="emailMsg"></label> <br>
-		</div>
+		</div>-->
 
 		<div class="inputBox">
 			<textarea></textarea>
@@ -320,14 +320,34 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		</div>
 
 		<div class="inputBox">
-			<input type="Submit" id="loginBtn" value="Dërgo">
+			<input type="Submit" name="dergo" id="loginBtn" value="Dërgo">
 		</div>
 		</form>
 	</div>
-	<p class="signup-box1">Nuk keni një llogari? <a href="signup.html"><b>Regjistrohu Këtu</b></a></p>
+	<!--<p class="signup-box1">Nuk keni një llogari? <a href="signup.html"><b>Regjistrohu Këtu</b></a></p>-->
+	<p class="signup-box1"><b>Doni të bëheni pjesë e jona për më shumë njoftime rreth këtij qyteti?</b><a href="http://localhost:8008/Projekti1/Projekti1/PhpDatabaseConnection/index.php"><h4 class="kliko" style="color: black; background-color: lightblue; border-radius: 8px; font-size: 22px;"> KLIKO KETU </h4></a></p>
 	</section>
 
-	<script>
+	<!--<script>
+
+		var button = document.getElementById("loginBtn");
+		var loginBtn = document.getElementById("loginBtn");
+
+		button.addEventListener("click", function(event){
+           var dergo = document.getElementById("dergo").value;
+
+           if(dergo == "" || dergo == null){
+				loginBtn.innerText="Fill message field!";
+                event.preventDefault();
+            }else{
+                dergo.innerText="Message Error!";
+                event.preventDefault();
+				}
+            }
+		)
+	</script>-->
+
+	<!--<script>
 
 		var button = document.getElementById("loginBtn");
     	var nameMsg = document.getElementById("nameMsg");
@@ -390,9 +410,9 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
             }
 		})
 
-	</script>
+	</script>-->
 
-	<div id="About" class="About-area">
+	<!--<div id="About" class="About-area">
 	<div class="centerdiv">
 
 	<a href="https://www.facebook.com/">
@@ -407,7 +427,7 @@ Nga gjysma e viti 1988, me ndarjen e re territoriale, u formua Komuna e Shtimes.
 		<i class="fas fa-envelope"></i>
 	</a>
 	</div>
-	</div>
+	</div>-->
  
 </body>
 </html>
