@@ -6,11 +6,22 @@
 
 /*Responsive*/
 
-/*@media screen and (max-width: 961px){
+@media screen and (max-width: 961px){
+
 	.container{
 		width: auto;
 	}
-}*/
+
+	.slidercontainer{
+		width: 100%;
+	}
+
+	.slidercontainer fade{  
+		width: 100%;
+		height: 20%;
+	}
+
+}
 
 a {
 	color: inherit;
