@@ -1,14 +1,26 @@
 <?php
 
-$sname= "localhost";
-$unmae= "root";
-$password = "";
+class DatabaseConnection{
+    private $server="localhost";
+    private $username="root";
+    private $password="";
+    private $database="sendmessage";
 
-$db_name = "sentmessage";
+   
 
-$conn = mysqli_connect($sname, $unmae, $password, $db_name);
-
-if (!$conn) {
-	echo "Connection failed!";
+    function startConnection(){
+        if(!$conn = mysqli_connect($this->server,$this->username,$this->password,$this->database)){
+            //echo "Connection failed";
+             return null;
+        }else{
+           // echo "Connection successfully";
+            return $conn;
+        }
+    }
 }
+
+// $db = new DatabaseConnection();
+
+// $db->startConnection();
+
 ?>
