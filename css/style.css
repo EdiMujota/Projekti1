@@ -451,21 +451,21 @@ desc {
 
 .contactForm {
 	text-align: left;
-	width: 155px;
-	padding: 30px 40px;
-	background: #fff;
+	width: 156px;
+	padding: 0px 40px;
+	background: lightblue;
 	margin-top: -110px;
 	border-radius: 8px;
 }
 
-.contactForm h2 {
+.contactForm h3 {
 	text-align: center;
 	font-size: 19px;
 	color: #333;
 	font-weight: 500;
 }
 
-.contactForm .inputBox {
+.contactForm .inputBox h3{
 	position: relative;
 	margin-top: 50px;
 	width: 100%;
@@ -474,7 +474,7 @@ desc {
 .contactForm .inputBox input,
 .contactForm .inputBox textarea {
 	width: 100%;
-	padding: 1px 1px;
+	padding: 1px 6px;
 	font-size: 14px;
 	margin: 10px 0;
 	border: none;
