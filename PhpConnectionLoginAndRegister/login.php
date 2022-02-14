@@ -1,3 +1,17 @@
+<!--Roli: perdorues i thjeshte.-->
+<?php
+    session_start();
+    if (isset($_SESSION["user"])) {
+        if ($_SESSION["user"][7] == 'user') {
+            header("Location: index.php"); 
+        }   
+    } else {
+        header("Location: index.php"); 
+    }
+?>
+
+<!--===============================-->
+
 <?php
 session_start(); 
 include "db_conn.php";

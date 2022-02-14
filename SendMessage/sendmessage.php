@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+/*session_start();
 include_once "db_conn.php";
 
 $message = $_POST['message'];
@@ -17,7 +17,7 @@ if($conn->$connection_error){
   echo "Mesazhi juaj u dergua me suksese...";
   $stmt->close();
   $conn->close();
-}
+}*/
 
 ?>
 
